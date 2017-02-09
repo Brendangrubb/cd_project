@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+        <title>CD Organizer Main</title>
+    </head>
+    <body>
+        <div class="container">
+            <header><h1>CD Organizer</h1></header>
+            <br>
+            <form action="/save_a_cd" method="post">
+                <div class="form-group">
+                    <label for="title">Enter A CD </label>
+                    <input id="title" class="form-control" type="text" name="title" placeholder="enter the title here">
+                </div>
+                <button type="submit" class="btn btn-primary" type="text">submit</button>
+            </form>
+            <h1>Your CD's: </h1>
+            {% for cd in all_cds %}
+                <li>{{cd.title}}</li>
+            {% endfor %}
+            <br>
+            <form action="/delete_a_cd" method="post">
+                <button class="btn btn-danger" type="submit" name="">Delete Your Collection</button>
+            </form>
+        </div>
+
+    </body>
+</html>
